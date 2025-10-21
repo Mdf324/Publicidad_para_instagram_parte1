@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Instagram Marketing Gratuito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos generales */
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --light: #f8f9fa;
+            --dark: #2d3748;
+            --success: #48bb78;
+            --text: #2d3748;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,249,250,0.9) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: var(--gradient-bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Encabezado */
+        header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            position: relative;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        /* Navegación */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            background: rgba(102, 126, 234, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        nav a:hover {
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Secciones */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 5px;
+            background: var(--gradient-secondary);
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: var(--text);
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .section-title p {
+            font-size: 1.3rem;
+            color: var(--dark);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        /* Tarjetas de contenido */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: var(--gradient-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .card-header i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .card-body {
+            padding: 2.5rem 2rem;
+        }
+        
+        .card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* Listas */
+        ul.feature-list {
+            list-style: none;
+        }
+        
+        ul.feature-list li {
+            margin-bottom: 1.2rem;
+            padding-left: 40px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        ul.feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.3rem;
+            background: rgba(72, 187, 120, 0.1);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--success);
+        }
+        
+        /* Ejemplo práctico */
+        .practical-example {
+            background: var(--gradient-card);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .practical-example::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-secondary);
+        }
+        
+        .example-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .example-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            font-size: 1.5rem;
+        }
+        
+        .example-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            color: var(--dark);
+            font-weight: 600;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        /* Imagen de macetas simulada */
+        .macetas-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .maceta {
+            width: 160px;
+            height: 200px;
+            position: relative;
+            filter: drop-shadow(0 8px 15px rgba(0,0,0,0.1));
+            transition: transform 0.3s ease;
+        }
+        
+        .maceta:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cuerpo-maceta {
+            width: 100%;
+            height: 140px;
+            background: #8B4513;
+            border-radius: 20px 20px 8px 8px;
+            position: absolute;
+            bottom: 0;
+            box-shadow: inset 0 -8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .maceta-1 .cuerpo-maceta {
+            background: linear-gradient(45deg, #8B4513, #A0522D);
+        }
+        
+        .maceta-2 .cuerpo-maceta {
+            background: linear-gradient(45deg, #D2691E, #CD853F);
+        }
+        
+        .maceta-3 .cuerpo-maceta {
+            background: linear-gradient(45deg, #A52A2A, #DC143C);
+        }
+        
+        .decoracion {
+            position: absolute;
+            width: 80%;
+            height: 30px;
+            background: linear-gradient(45deg, #FFD700, #FFEC8B);
+            top: 20px;
+            left: 10%;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+        
+        .planta {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #228B22, #32CD32);
+            border-radius: 50%;
+            top: -40px;
+            left: 40px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .hojas {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #32CD32, #3CB371);
+            border-radius: 50%;
+            top: -30px;
+            left: 20px;
+        }
+        
+        .hojas:nth-child(2) {
+            left: 60px;
+            background: linear-gradient(45deg, #3CB371, #2E8B57);
+        }
+        
+        /* Tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        th, td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        th {
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover {
+            background: rgba(102, 126, 234, 0.03);
+        }
+        
+        /* Consejos */
+        .tip-box {
+            background: linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(245, 87, 108, 0.1) 100%);
+            border-left: 5px solid transparent;
+            border-image: var(--gradient-secondary) 1;
+            padding: 2rem;
+            border-radius: 0 15px 15px 0;
+            margin: 2.5rem 0;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .tip-box::before {
+            content: "💡";
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            z-index: 1;
+        }
+        
+        .tip-box::after {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-secondary);
+            z-index: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 5rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        /* Botones */
+        .btn {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 8px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav a {
+                justify-content: center;
+            }
+            
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title::after {
+                width: 100px;
+            }
+            
+            .macetas-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .practical-example {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><i class="fab fa-instagram"></i></div>
+            <h1>Manual de Instagram Marketing</h1>
+            <p class="subtitle">Guía profesional para promocionar tu emprendimiento en Instagram sin inversión</p>
+            <a href="#conceptos" class="btn" style="margin-top: 1.5rem;">
+                <i class="fas fa-graduation-cap"></i> Comenzar a aprender
+            </a>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#conceptos"><i class="fas fa-lightbulb"></i> Conceptos Básicos</a></li>
+                <li><a href="#contenido"><i class="fas fa-palette"></i> Contenido de Calidad</a></li>
+                <li><a href="#hashtags"><i class="fas fa-hashtag"></i> Hashtags Efectivos</a></li>
+                <li><a href="#estrategias"><i class="fas fa-chart-line"></i> Estrategias Orgánicas</a></li>
+                <li><a href="#ejemplo"><i class="fas fa-laptop-code"></i> Ejemplo Práctico</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section id="conceptos">
+            <div class="section-title">
+                <h2>Conceptos Básicos de Instagram</h2>
+                <p>Domina los fundamentos para tener una presencia efectiva</p>
+            </div>
+            
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-star"></i>
+                        <h3>Contenido de Calidad</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>El contenido de calidad en Instagram se refiere a publicaciones que:</p>
+                        <ul class="feature-list">
+                            <li>Son visualmente atractivas y coherentes</li>
+                            <li>Proporcionan valor al usuario (educativo, entretenido, inspirador)</li>
+                            <li>Cuentan una historia o transmiten emociones</li>
+                            <li>Son auténticas y reflejan la identidad de tu marca</li>
+                            <li>Generan engagement (me gusta, comentarios, guardados)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-hashtag"></i>
+                        <h3>Hashtags</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Los hashtags son palabras o frases precedidas por el símbolo # que ayudan a categorizar el contenido y hacerlo descubrible.</p>
+                        <ul class="feature-list">
+                            <li>Usa hashtags relevantes para tu nicho</li>
+                            <li>Combina hashtags populares y específicos</li>
+                            <li>Investiga hashtags de la competencia</li>
+                            <li>Crea tu propio hashtag de marca</li>
+                            <li>Máximo recomendado: 5-15 hashtags por publicación</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Cuenta Profesional</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Cambiar a una cuenta profesional en Instagram te brinda herramientas gratuitas para emprendedores:</p>
+                        <ul class="feature-list">
+                            <li>Estadísticas de rendimiento (insights)</li>
+                            <li>Información sobre tu audiencia</li>
+                            <li>Botón de contacto directo</li>
+                            <li>Categorización de tu negocio</li>
+                            <li>Promoción de publicaciones (opcional)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-search"></i>
+                        <h3>SEO en Instagram</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Aunque Instagram no es un motor de búsqueda tradicional, aplicar principios de SEO ayuda:</p>
+                        <ul class="feature-list">
+                            <li>Optimiza tu nombre de usuario y nombre de perfil con palabras clave</li>
+                            <li>Incluye palabras clave relevantes en tu biografía</li>
+                            <li>Usa texto alternativo en las imágenes</li>
+                            <li>Crea títulos descriptivos en Reels y IGTV</li>
+                            <li>Utiliza ubicaciones para aparecer en búsquedas locales</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Geolocalización</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>La geolocalización permite etiquetar tu ubicación en las publicaciones:</p>
+                        <ul class="feature-list">
+                            <li>Aumenta la visibilidad local de tu negocio</li>
+                            <li>Atrae clientes potenciales de tu área</li>
+                            <li>Permite aparecer en búsquedas de lugares específicos</li>
+                            <li>Genera confianza al mostrar tu ubicación real</li>
+                            <li>Útil para negocios con presencia física</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Diferencias SEO vs SEM</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>En el contexto de Instagram:</p>
+                        <ul class="feature-list">
+                            <li><strong>SEO (Search Engine Optimization):</strong> Técnicas orgánicas para mejorar visibilidad sin pagar</li>
+                            <li><strong>SEM (Search Engine Marketing):</strong> Estrategias de pago para aumentar visibilidad</li>
+                            <li>Este manual se enfoca en técnicas SEO (gratuitas)</li>
+                            <li>El SEM en Instagram incluye anuncios patrocinados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contenido">
+            <div class="section-title">
+                <h2>Creación de Contenido de Calidad</h2>
+                <p>Aprende a crear publicaciones que conecten con tu audiencia</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="color: var(--text); margin-bottom: 2rem;">Tipos de contenido que funcionan en Instagram</h3>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Contenido</th>
+                                <th>Descripción</th>
+                                <th>Ejemplo para Emprendimiento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Contenido Educativo</strong></td>
+                                <td>Enseña algo relacionado con tu producto/servicio</td>
+                                <td>"Cómo elegir el mejor material para tus manualidades"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Detrás de Cámaras</strong></td>
+                                <td>Muestra el proceso de creación</td>
+                                <td>Video time-lapse creando un producto</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Testimonios</strong></td>
+                                <td>Comparte experiencias de clientes satisfechos</td>
+                                <td>Foto de cliente con tu producto + su testimonio</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Contenido Interactivo</strong></td>
+                                <td>Involucra a tu audiencia con preguntas, encuestas</td>
+                                <td>Stories con preguntas "¿Qué color prefieres para la próxima colección?"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Contenido de Tendencia</strong></td>
+                                <td>Aprovecha trends virales adaptados a tu nicho</td>
+                                <td>Reel usando audio popular mostrando tu producto</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="tip-box">
+                        <strong>Consejo:</strong> Planifica tu contenido con anticipación. Crea un calendario de contenidos para mantener consistencia y calidad.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="hashtags">
+            <div class="section-title">
+                <h2>Estrategia de Hashtags Efectivos</h2>
+                <p>Maximiza tu alcance con la estrategia correcta de hashtags</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="color: var(--text); margin-bottom: 2rem;">Tipos de hashtags y cómo utilizarlos</h3>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Hashtag</th>
+                                <th>Ejemplos</th>
+                                <th>Propósito</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Hashtags de Nicho</strong></td>
+                                <td>#manualidades, #artesanía, #hechoamano</td>
+                                <td>Llegar a tu audiencia específica</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hashtags de Comunidad</strong></td>
+                                <td>#apoyolocal, #emprendedores, #pequeñosnegocios</td>
+                                <td>Conectar con comunidades afines</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hashtags de Ubicación</strong></td>
+                                <td>#artesaniasargentina, #manualidadesbsas</td>
+                                <td>Atraer clientes locales</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hashtags de Marca</strong></td>
+                                <td>#tunombredeempresa, #tueslogan</td>
+                                <td>Crear comunidad alrededor de tu marca</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hashtags de Campaña</strong></td>
+                                <td>#lanuevacolección2023, #especialnavidad</td>
+                                <td>Promocionar lanzamientos específicos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="tip-box">
+                        <strong>Consejo:</strong> Guarda grupos de hashtags en las notas de tu teléfono para usarlos rápidamente en tus publicaciones. Crea 3-4 grupos diferentes para rotarlos y evitar parecer spam.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="estrategias">
+            <div class="section-title">
+                <h2>Estrategias Orgánicas para Crecimiento</h2>
+                <p>Técnicas gratuitas para aumentar tu visibilidad y engagement</p>
+            </div>
+            
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-user-circle"></i>
+                        <h3>Optimización del Perfil</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="feature-list">
+                            <li>Foto de perfil clara y reconocible (logo o tu foto)</li>
+                            <li>Nombre de usuario fácil de recordar y buscar</li>
+                            <li>Nombre con palabras clave relevantes</li>
+                            <li>Biografía clara que explica QUÉ HACES y PARA QUIÉN</li>
+                            <li>Incluye un llamado a la acción (visita mi sitio, escríbeme)</li>
+                            <li>Enlace único (puedes usar Linktree para múltiples enlaces)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Consistencia y Frecuencia</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="feature-list">
+                            <li>Publica regularmente (3-5 veces por semana mínimo)</li>
+                            <li>Mantén una estética visual coherente</li>
+                            <li>Usa Stories diariamente para mantener engagement</li>
+                            <li>Responde a todos los comentarios y mensajes</li>
+                            <li>Interactúa con cuentas similares a la tuya</li>
+                            <li>Programa contenido en horarios de mayor actividad</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-users"></i>
+                        <h3>Colaboraciones y Comunidad</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="feature-list">
+                            <li>Colabora con microinfluencers o emprendedores similares</li>
+                            <li>Participa en takeovers (intercambios de cuenta)</li>
+                            <li>Menciona y etiqueta a otros emprendedores</li>
+                            <li>Únete a conversaciones en tu nicho</li>
+                            <li>Crea contenido generado por usuarios (clientes)</li>
+                            <li>Organiza concursos o sorteos sencillos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ejemplo">
+            <div class="section-title">
+                <h2>Ejemplo Práctico: Publicación Optimizada</h2>
+                <p>Aplica todo lo aprendido en un caso real</p>
+            </div>
+            
+            <div class="practical-example">
+                <div class="example-header">
+                    <div class="example-avatar">AA</div>
+                    <div>
+                        <h3 style="color: var(--text);">Artesanías Argentinas</h3>
+                        <p>Hace 2 horas · 📍 Buenos Aires, Argentina</p>
+                    </div>
+                </div>
+                
+                <div class="example-content">
+                    <p>¡Nueva colección de macetas pintadas a mano! 🌱 Cada una es única y especial, como tus plantitas. ¿Cuál te gusta más?</p>
+                    
+                    <!-- Imagen de ejemplo simulada con CSS -->
+                    <div class="macetas-container">
+                        <div class="maceta maceta-1">
+                            <div class="cuerpo-maceta">
+                                <div class="decoracion"></div>
+                            </div>
+                            <div class="planta"></div>
+                            <div class="hojas"></div>
+                            <div class="hojas"></div>
+                        </div>
+                        <div class="maceta maceta-2">
+                            <div class="cuerpo-maceta">
+                                <div class="decoracion"></div>
+                            </div>
+                            <div class="planta"></div>
+                            <div class="hojas"></div>
+                            <div class="hojas"></div>
+                        </div>
+                        <div class="maceta maceta-3">
+                            <div class="cuerpo-maceta">
+                                <div class="decoracion"></div>
+                            </div>
+                            <div class="planta"></div>
+                            <div class="hojas"></div>
+                            <div class="hojas"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-stats">
+                        <span><i class="fas fa-heart"></i> 145 me gusta</span>
+                        <span><i class="fas fa-comment"></i> 28 comentarios</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 2rem; background: rgba(102, 126, 234, 0.05); border-radius: 15px;">
+                    <h4 style="color: var(--text); margin-bottom: 1.5rem;">Análisis de esta publicación:</h4>
+                    <ul class="feature-list">
+                        <li><strong>Contenido visual atractivo:</strong> Muestra el producto de forma clara y estética</li>
+                        <li><strong>Pregunta para generar engagement:</strong> "¿Cuál te gusta más?" invita a comentar</li>
+                        <li><strong>Geolocalización:</strong> Ubicación etiquetada para atraer clientes locales</li>
+                        <li><strong>Hashtags utilizados:</strong> #macetaspintadas #artesaniaargentina #decoracionplantas #hechoamano #manualidades #apoyolocal #plantlover #macetas #decoracionhogar #artesaniaargentina</li>
+                        <li><strong>Llamada a la acción implícita:</strong> La pregunta invita a la interacción</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <strong>Ejercicio práctico:</strong> Crea una publicación para tu emprendimiento aplicando todos los conceptos aprendidos. Incluye: imagen atractiva, descripción con llamada a la acción, ubicación y grupo de hashtags estratégicos. Publica y analiza los resultados después de 24 horas.
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Manual de Instagram Marketing Gratuito para Microemprendedores</p>
+            <p>© 2023 - Diseñado para estudiantes y emprendedores argentinos</p>
+        </div>
+    </footer>
+</body>
+</html>
